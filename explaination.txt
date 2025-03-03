@@ -1,0 +1,66 @@
+Explanation
+✔ Fully functional To-Do List
+✔ Can add, delete, and mark tasks as done
+✔ Saves tasks even after refresh
+
+
+
+<!--html-->
+-The input box allows the user to type a new task.
+-The "Add" button calls the addTask() function when clicked.
+-The unordered list (ul) is empty initially, but new tasks are added dynamically via JavaScript.
+
+
+
+/*CSS*/
+Resets default margin & padding for all elements.
+-Uses box-sizing: border-box to make sure padding & borders don’t affect width/height.
+-The .container takes full width and full viewport height.
+-A gradient background is applied.
+-The .todo-app is a white card where tasks will appear.
+-max-width: 540px; keeps it centered and responsive.
+-The heading (h2) and icon are aligned properly.
+-The input box and button are placed in a flexbox for alignment.
+-The input field stretches inside .row.
+Removes border/outline for a clean look.
+-Styles the "Add" button with a green background.
+ul li -Removes default bullet points.
+-Adds padding and cursor styling for better UX.
+-Custom checkbox icons for tasks.
+-If a task is checked, it gets a strikethrough.-If a task is checked, it gets a strikethrough.
+
+
+
+
+//JavaScript
+This controls the functionality of the To-Do List.
+const inputBox = document.getElementById('input-box');
+const listContainer = document.getElementById('list-container');
+Gets references to the input field and task list.
+
+Adding a Task
+function addTask()
+-Checks if input is empty and shows an alert.
+-Creates a <li> (list item) and adds the task inside it.
+-Creates a <span> (delete button) and appends it to <li>.
+-Clears input field after adding a task.
+-Calls saveData() to store tasks in localStorage.
+
+Checking & Deleting a Task
+listContainer.addEventListener("click", function(e).....)
+-If LI is clicked, it toggles "checked" class (strikethrough).
+-If SPAN (× button) is clicked, the task is deleted.
+
+Adding Task with Enter Key
+inputBox.addEventListener("keypress"...)
+-Lets the user press Enter andclicking the Add button performs the same task.
+
+
+Saving & Restoring Data
+-function saveData()
+-function saveEvenIfRefreshed()
+-Saves tasks in localStorage, so they persist even after refresh.
+-Restores tasks when the page loads.
+
+
+
